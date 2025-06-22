@@ -7,7 +7,7 @@ print("Supported game!!!!")
 local creator = game.CreatorId
 
 local games = {
-    [91694942823334] = 'https://raw.githubusercontent.com/s4lcn53/loader/refs/heads/main/Games/TypicalRNG.lua'
+    [91694942823334] = 'https://raw.githubusercontent.com/s4lcn53/loader/refs/heads/main/Games/TypicalRNG.lua',
 }
 
 if games[creator] then
