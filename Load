@@ -11,8 +11,10 @@ local games = {
 }
 
 if games[creator] then
-    print("Please wait, daddyhh~ loading..")
+    print("Delete system 32")
     loadstring(game:HttpGet(games[creator]))()
 else
     warn("Unsupported game.")
+    task.wait(2)
+    game.Players.LocalPlayer:Kick("Unsupported game!")
 end
