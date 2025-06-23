@@ -9,6 +9,7 @@ local creator = game.CreatorId
 local games = {
     [35623634] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/TypicalRNG.lua',
     [33799733] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Lootify.lua',
+    [35961432] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Lootify.lua',
 }
 
 if games[creator] then
