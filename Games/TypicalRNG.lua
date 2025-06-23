@@ -9,7 +9,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 -- Create Window
 local Window = Rayfield:CreateWindow({
-   Name = "DinoHub",
+   Name = "DinoHub // Typical.RNG",
    Icon = 86418345950386,
    LoadingTitle = "Loading...",
    LoadingSubtitle = "by DinoLive3009",
