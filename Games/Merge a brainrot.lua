@@ -55,7 +55,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddVa
    
 
 local Button = Tab:CreateButton({
-   Name = "Free Rebrith + Gems 🤑",
+   Name = "Free Rebrith + Inf Gems",
    Callback = function()local args = {
 	0,
 	0,
