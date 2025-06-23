@@ -50,7 +50,7 @@ Rayfield:Notify({
    Title = "Thank for using my script💕",
    Content = "Please join discord for updates",
    Duration = 7.5,
-   Image = nil,
+   Image = 86418345950386,
 })
 
 -- Main
