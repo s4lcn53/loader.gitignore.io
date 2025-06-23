@@ -1,3 +1,7 @@
+
+
+if game.PlaceId == 16498193900 then
+print("Work game")
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -55,6 +59,7 @@ local Button = Tab:CreateButton({
 )
 end,
 })
+end
 
 --Notify
 Rayfield:Notify({
