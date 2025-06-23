@@ -59,7 +59,7 @@ local Button = Tab:CreateButton({
    Callback = function()local args = {
 	0,
 	0,
-	100000
+	10000000000000000000000000000000000
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RebirthConfirmEvent"):FireServer(unpack(args))
 
