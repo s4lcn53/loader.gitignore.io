@@ -42,7 +42,7 @@ local Window = Rayfield:CreateWindow({
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
-   Name = "Get Money",
+   Name = "Inf Money!",
    Callback = function()local args = {
 	"Cash",
 	4000000000000000000000000000000000000
@@ -55,7 +55,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddVa
    
 
 local Button = Tab:CreateButton({
-   Name = "Free Rebrith",
+   Name = "Free Rebrith + Gems 🤑",
    Callback = function()local args = {
 	0,
 	0,
