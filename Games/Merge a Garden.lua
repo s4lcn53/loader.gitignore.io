@@ -44,12 +44,14 @@ getgenv().INF = true;
 
 function INF()
 while task.wait(0.1) do
+if getgenv().INF == true then
  local args = {
 	0,
 	0,
 	1000000000000000000000000000000000000
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RebirthConfirmEvent"):FireServer(unpack(args))
+			end
 	end
 end
 
