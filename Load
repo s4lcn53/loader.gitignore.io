@@ -7,9 +7,10 @@ print("Supported game!!!!")
 local creator = game.CreatorId
 
 local games = {
-    [35623634] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/TypicalRNG.lua',
-    [33799733] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Lootify.lua',
-    [35961432] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Merge%20a%20brainrot.lua',
+    [35623634] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/TypicalRNG.lua', -- typical.RNG
+    [33799733] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Lootify.lua', -- Lootify
+    [35961432] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Merge%20a%20brainrot.lua', -- Merge brainrot
+    [35961432] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Merge%20a%20brainrot.lua', -- Merge Garden
 }
 
 if games[creator] then
