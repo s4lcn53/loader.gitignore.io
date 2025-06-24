@@ -69,7 +69,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddVa
    end,
 })
    
-
+local Section = Tab:CreateSection("This might lag your game careful ⚠️")
 local Toggle = Tab:CreateToggle({
    Name = "INF gems + rebirth",
    CurrentValue = false,
