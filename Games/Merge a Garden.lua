@@ -43,7 +43,7 @@ local Window = Rayfield:CreateWindow({
 getgenv().INF = true;
 
 function INF()
-while task.wait(0.1) do
+while task.wait(0.001) do
 if getgenv().INF == true then
  local args = {
 	0,
