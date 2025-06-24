@@ -45,7 +45,7 @@ local Button = Tab:CreateButton({
    Name = "Inf Money!",
    Callback = function()local args = {
 	"Cash",
-	4000000000000000000000000000000000000
+	40000000000000000000000000000000000000
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddValueEvent"):FireServer(unpack(args))
 
@@ -59,7 +59,7 @@ local Button = Tab:CreateButton({
    Callback = function()local args = {
 	0,
 	0,
-	10000000000000000000000000000000000
+	1000000000000000000000000000000000000
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RebirthConfirmEvent"):FireServer(unpack(args))
 
