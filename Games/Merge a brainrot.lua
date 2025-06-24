@@ -3,7 +3,7 @@ print("Work game")
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "DinoHub // Merge a brainrot",
+   Name = "DinoHub // Merge a BrainRot",
    Icon = 86418345950386,
    LoadingTitle = "Loading...",
    LoadingSubtitle = "by DinoLive3009",
