@@ -1,3 +1,5 @@
+if game.PlaceId == 12355337193 then
+print("Work")
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
 local espEnabled = false
@@ -260,3 +262,4 @@ MainTab:CreateToggle({
         end
     end
 })
+end
