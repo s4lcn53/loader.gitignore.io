@@ -39,6 +39,20 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+-- Functions
+getgenv().INF = true;
+
+function INF()
+while task.wait(0.1) do
+ local args = {
+	0,
+	0,
+	1000000000000000000000000000000000000
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RebirthConfirmEvent"):FireServer(unpack(args))
+	end
+end
+
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
 
 local Button = Tab:CreateButton({
@@ -54,20 +68,17 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddVa
 })
    
 
-local Button = Tab:CreateButton({
-   Name = "Free Rebrith + Inf Gems",
-   Callback = function()local args = {
-	0,
-	0,
-	10000000000000000000000000000000000
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RebirthConfirmEvent"):FireServer(unpack(args))
-
-   -- The function that takes place when the button is pressed
+local Toggle = Tab:CreateToggle({
+   Name = "INF gems + rebirth",
+   CurrentValue = false,
+   Flag = nil, -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      getgenv().INF = Value
+      INF()
    end,
 })
 
 
-
+   -- The function that takes place when the button is pressed
   
 end
