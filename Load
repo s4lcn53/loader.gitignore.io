@@ -10,7 +10,7 @@ local games = {
     [35623634] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/TypicalRNG.lua', -- typical.RNG
     [33799733] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Lootify.lua', -- Lootify
     [35961432] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Merge%20a%20brainrot.lua', -- Merge brainrot
-    [36029973] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Merge%20a%20brainrot.lua', -- Merge Garden
+    [36029973] = 'https://raw.githubusercontent.com/s4lcn53/loader.gitignore.io/refs/heads/main/Games/Merge%20a%20Garden.lua', -- Merge Garden
 }
 
 if games[creator] then
