@@ -1,0 +1,226 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Create Window
+local Window = Rayfield:CreateWindow({
+   Name = "DinoHub // Stud Simulator",
+   Icon = 86418345950386,
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by DinoLive3009",
+   ShowText = "DinoLive3009",
+   Theme = "Ocean",
+
+   ToggleUIKeybind = Enum.KeyCode.RightControl,
+
+   DisableRayfieldPrompts = true,
+   DisableBuildWarnings = true,
+
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Hentai"
+   },
+
+   Discord = {
+      Enabled = true,
+      Invite = "discord.gg/TvQAybnMHj",
+      RememberJoins = true
+   },
+
+   KeySystem = false,
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+--Notify
+Rayfield:Notify({
+   Title = "Thank for using my script💕",
+   Content = "Please join discord for updates",
+   Duration = 7.5,
+   Image = nil,
+})
+
+-- Main
+local player = game.Players.LocalPlayer
+local RunService = game:GetService("RunService")
+getgenv().Upgrade_Money = true;
+getgenv().Inf_Money = true;
+
+
+--Function
+function Upgrade_Money()
+  while task.wait(0.01) do
+  if getgenv().Upgrade_Money == true then
+      local args = {
+	0
+}
+workspace:WaitForChild("Events"):WaitForChild("UpgradeMultiplier"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+      end
+  end
+end
+
+function Inf_Money()
+  while task.wait(0.01) do
+  if getgenv().Inf_Money == true then
+      local args = {
+	10000,
+	-5481234172846274
+}
+workspace:WaitForChild("Events"):WaitForChild("UpgradeSpeed"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+  end
+end
+end
+
+-- Tab/ etc
+local Tab = Window:CreateTab("☠️ Main") -- Title, Image
+local Section = Tab:CreateSection("When you rebirth everythings just gone be careful!")
+
+-- Toggles
+local Toggle = Tab:CreateToggle({
+   Name = "Upgrade Money",
+   CurrentValue = false,
+   Callback = function(Value)
+   getgenv().Upgrade_Money = Value
+   Upgrade_Money()
+   end,
+})
+
+local Toggle2 = Tab:CreateToggle({
+   Name = "Inf Money",
+   CurrentValue = false,
+   Callback = function(Value)
+   getgenv().Inf_Money = Value
+   Inf_Money()
+   end,
+})
+
+local Button3 = Tab:CreateButton({
+   Name = "Inf Rebirth",
+   Callback = function()
+       local args = {
+	9999999999999999,
+	0
+}
+workspace:WaitForChild("Events"):WaitForChild("UpgradeRebirth"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end,
+})
+
+local Section = Tab:CreateSection("This will prevent you from being kicked when AFK")
+
+local antiAfkEnabled = false
+local afkConnection
+
+local Toggle3 = Tab:CreateToggle({
+    Name = "Anti-AFK",
+    CurrentValue = false,
+    Callback = function(Value)
+        antiAfkEnabled = Value
+
+        if antiAfkEnabled then
+            -- Connect the event
+            afkConnection = player.Idled:Connect(function()
+                local VirtualUser = game:GetService("VirtualUser")
+                VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+                task.wait(1)
+                VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+            end)
+            Rayfield:Notify({Title = "Anti-AFK Enabled ✅", Content = "Subs", Duration = 1.5,})
+        else
+            -- Disconnect the event
+            if afkConnection then
+                afkConnection:Disconnect()
+                afkConnection = nil
+            end
+            Rayfield:Notify({Title = "Anti-AFK Disabled ❌", Content = "Subs", Duration = 1.5,})
+        end
+    end
+})
+
+
+
+
+local Section = Tab:CreateSection("Another...")
+
+local Button2 = Tab:CreateButton({
+   Name = "Remove Texture",
+   Callback = function()
+       for i,v in next,(workspace:GetDescendants()) do
+       if v:IsA("Part") then v.Material = Enum.Material.SmoothPlastic
+       end
+    end
+end,
+})
+
+-- Tab 2
+local MainTab = Window:CreateTab("🛠️ Misc")
+local Section = MainTab:CreateSection("Mod")
+local Slider = MainTab:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {1, 1000},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+   end,
+})
+
+-- JUst a slider
+local Slider = MainTab:CreateSlider({
+   Name = "JumpPower",
+   Range = {1, 350},
+   Increment = 1,
+   Suffix = "Jump",
+   CurrentValue = 16,
+   Flag = "sliderjp", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+   end,
+})
+
+-- Inf jump
+local Button = MainTab:CreateButton({
+   Name = "Infinite Jump",
+   Callback = function()
+       --Toggles the infinite jump between on or off on every script run
+_G.infinjump = not _G.infinjump
+
+if _G.infinJumpStarted == nil then
+	--Ensures this only runs once to save resources
+	_G.infinJumpStarted = true
+	
+	--Notifies readiness
+	game.StarterGui:SetCore("SendNotification", {Title="DinoHub"; Text="Done !"; Duration=5;})
+
+	--The actuainfinite jump
+	local plr = game:GetService('Players').LocalPlayer
+	local m = plr:GetMouse()
+	m.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+			humanoid:ChangeState('Jumping')
+			wait()
+			humanoid:ChangeState('Seated')
+			end
+		end
+	end)
+end
+   end,
+})
+
+-- Destroy UI
+local Button = MainTab:CreateButton({
+   Name = "Destroy UI",
+   Callback = function()
+    Rayfield:Destroy()
+end,
+})
