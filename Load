@@ -12,6 +12,7 @@ local games = {
     [35961432] = 'https://raw.githubusercontent.com/s4lcn53/loader/refs/heads/main/Games/Merge%20a%20brainrot.lua', -- Merge brainrot
     [36029973] = 'https://raw.githubusercontent.com/s4lcn53/loader/refs/heads/main/Games/Merge%20a%20Garden.lua', -- Merge Garden
     [32445464] = 'https://raw.githubusercontent.com/s4lcn53/loader/refs/heads/main/Games/Murders%20VS%20Sheriffs%20DUELS.lua', -- Murder vs sheriff duels
+    [8552470237] = 'https://raw.githubusercontent.com/s4lcn53/loader/refs/heads/main/Games/Stud%20Simulator' -- stud sim
 }
 
 if games[creator] then
