@@ -15,6 +15,74 @@ local localPlayer = Players.LocalPlayer
 local espList = {}
 local walkSpeed = 16
 local flySpeed = 70
+local highlightEnabled = false
+local highlightConnections = {}
+local highlightList = {}
+
+local function createHighlightForCharacter(char, plr)
+   if plr == player then return end
+   if highlightList[plr] then return end
+
+   local highlight = Instance.new("Highlight")
+   highlight.Name = "PlayerHighlight"
+   highlight.Adornee = char
+   highlight.FillTransparency = 1
+   highlight.OutlineTransparency = 0
+   highlight.OutlineColor = Color3.fromRGB(255, 0, 255)
+   highlight.Parent = char
+
+   highlightList[plr] = highlight
+end
+
+local function enableHighlight()
+   for _, plr in ipairs(game.Players:GetPlayers()) do
+      if plr.Character then
+         createHighlightForCharacter(plr.Character, plr)
+      end
+   end
+
+   table.insert(highlightConnections, game.Players.PlayerAdded:Connect(function(p)
+      table.insert(highlightConnections, p.CharacterAdded:Connect(function(char)
+         repeat task.wait() until char:FindFirstChild("HumanoidRootPart")
+         createHighlightForCharacter(char, p)
+      end))
+   end))
+
+   for _, p in ipairs(game.Players:GetPlayers()) do
+      if p ~= player then
+         table.insert(highlightConnections, p.CharacterAdded:Connect(function(char)
+            repeat task.wait() until char:FindFirstChild("HumanoidRootPart")
+            createHighlightForCharacter(char, p)
+         end))
+      end
+   end
+end
+
+local function disableHighlight()
+   for _, hl in pairs(highlightList) do
+      if hl then hl:Destroy() end
+   end
+   highlightList = {}
+
+   for _, conn in ipairs(highlightConnections) do
+      if conn then conn:Disconnect() end
+   end
+   highlightConnections = {}
+end
+
+EspTab:CreateToggle({
+   Name = "Highlight",
+   CurrentValue = false,
+   Flag = "HighlightToggle",
+   Callback = function(Value)
+      highlightEnabled = Value
+      if Value then
+         enableHighlight()
+      else
+         disableHighlight()
+      end
+   end,
+})
 
 local function applyCharacterSettings()
     if localPlayer.Character and localPlayer.Character:FindFirstChild("Humanoid") then
@@ -37,7 +105,7 @@ local Window = Rayfield:CreateWindow({
 local MainTab = Window:CreateTab("Main", 4483362458)
 
 MainTab:CreateToggle({
-    Name = "ESP Toggle",
+    Name = "Esp_Box",
     CurrentValue = false,
     Flag = "ESP_Toggle",
     Callback = function(Value)
