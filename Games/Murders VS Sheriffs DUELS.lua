@@ -70,19 +70,6 @@ local function disableHighlight()
    highlightConnections = {}
 end
 
-EspTab:CreateToggle({
-   Name = "Highlight",
-   CurrentValue = false,
-   Flag = "HighlightToggle",
-   Callback = function(Value)
-      highlightEnabled = Value
-      if Value then
-         enableHighlight()
-      else
-         disableHighlight()
-      end
-   end,
-})
 
 local function applyCharacterSettings()
     if localPlayer.Character and localPlayer.Character:FindFirstChild("Humanoid") then
@@ -112,6 +99,20 @@ MainTab:CreateToggle({
         espEnabled = Value
         for _, v in pairs(espList) do if v.drawing then v.drawing.Visible = espEnabled end end
     end,
+})
+
+MainTab:CreateToggle({
+   Name = "Highlight",
+   CurrentValue = false,
+   Flag = "HighlightToggle",
+   Callback = function(Value)
+      highlightEnabled = Value
+      if Value then
+         enableHighlight()
+      else
+         disableHighlight()
+      end
+   end,
 })
 
 MainTab:CreateToggle({
